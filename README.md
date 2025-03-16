@@ -1,16 +1,9 @@
 # myapp
 
-A new Flutter project.
+This is for Assignment 01: Flutter Mobile App Design (User Portfolio)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+So, in this project, it has an appbar, profile image, description of skill, and some buttons.
+The "Hire Me" Button, when it is click on, it will launch to Instagram profile.
+The "Download CV" button, when it is click on, it will launch to LinkedIn profile.
