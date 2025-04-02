@@ -61,7 +61,7 @@ flutter:
           weight: 700
         - asset: assets/fonts/Lato-Regular.ttf
         - asset: assets/fonts/Lato-Semibold.ttf
-          weight: 300
+          weight: 600
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
