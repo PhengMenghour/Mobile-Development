@@ -78,7 +78,15 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: 100),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      Image.asset('assets/images/accent.png', width: 125),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 70),
                 TextFormField(
                   controller: _emailController,
                   decoration: InputDecoration(

@@ -1,16 +1,7 @@
 # login_ui
 
-A new Flutter project.
+Login UI
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is a project for flutter, working on Login UI. Inside the project, there are 2 screens that can route to each other (LoginScreen and RegistrationScreen). In each screen, there are TextField, ElevatedButton, and Checkbox. Additionally, I have also add validation for Email and Password TextField to prevent input errors.
