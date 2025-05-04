@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-// Replace with your real/mock API base URL
 const String baseUrl = 'https://6817296826a599ae7c397c50.mockapi.io';
 
 class UserService {
