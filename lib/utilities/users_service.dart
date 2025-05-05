@@ -1,47 +1,53 @@
-import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-const String baseUrl = 'https://6817296826a599ae7c397c50.mockapi.io';
+class UsersService {
+  static final UsersService _singleton = UsersService._internal();
+  UsersService._internal();
+  static UsersService get instance => _singleton;
 
-class UserService {
-  // GET: Fetch users
+  final String baseUrl = "https://6817296826a599ae7c397c50.mockapi.io/";
+
   Future<List<dynamic>> getUsers() async {
     final response = await http.get(Uri.parse(baseUrl));
     if (response.statusCode == 200) {
-      return json.decode(response.body);
+      return jsonDecode(response.body);
     } else {
       throw Exception('Failed to load users');
     }
   }
 
-  // POST: Create a new user
-  Future<void> createUser(Map<String, dynamic> data) async {
-    final response = await http.post(
-      Uri.parse(baseUrl),
-      headers: {'Content-Type': 'application/json'},
-      body: json.encode(data),
-    );
-    if (response.statusCode != 201) {
-      throw Exception('Failed to create user');
-    }
-  }
-
-  // PATCH: Update user
-  Future<void> updateUser(String id, Map<String, dynamic> data) async {
-    final response = await http.patch(
+  Future<dynamic> updateUser(String id, Map<String, dynamic> data) async {
+    final response = await http.put(
       Uri.parse('$baseUrl/$id'),
       headers: {'Content-Type': 'application/json'},
-      body: json.encode(data),
+      body: jsonEncode(data),
     );
-    if (response.statusCode != 200) {
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
       throw Exception('Failed to update user');
     }
   }
 
-  // DELETE: Delete user
-  Future<void> deleteUser(String id) async {
+  Future<dynamic> createUser(Map<String, dynamic> data) async {
+    final response = await http.post(
+      Uri.parse(baseUrl),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode(data),
+    );
+    if (response.statusCode == 201) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception('Failed to create user');
+    }
+  }
+
+  Future<dynamic> deleteUser(String id) async {
     final response = await http.delete(Uri.parse('$baseUrl/$id'));
-    if (response.statusCode != 200) {
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
       throw Exception('Failed to delete user');
     }
   }

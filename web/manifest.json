@@ -1,6 +1,6 @@
 {
-    "name": "api_app",
-    "short_name": "api_app",
+    "name": "finale",
+    "short_name": "finale",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
