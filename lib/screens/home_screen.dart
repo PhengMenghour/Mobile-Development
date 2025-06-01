@@ -1,3 +1,4 @@
+import 'package:course_app/screens/search_screen.dart';
 import 'package:course_app/widgets/course_grid.dart';
 import 'package:course_app/widgets/quote_list.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,15 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Image.asset('assets/images/logoImage.png', height: 30),
             const Spacer(),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchScreen()),
+                );
+              },
+              icon: const Icon(Icons.search),
+            ),
             IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
           ],
         ),
